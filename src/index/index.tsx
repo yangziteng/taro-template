@@ -3,7 +3,6 @@ import PageContainer from '@/components/page_container'
 import { Button } from '@nutui/nutui-react-taro'
 
 import './index.scss'
-import toast from '@/utils/toast'
 
 const Index = (): JSX.Element => {
 	useEffect(() => {
@@ -14,7 +13,6 @@ const Index = (): JSX.Element => {
 		} catch (error) {
 			const msg = '读取环境变量异常，请先阅读 README.md, 配置环境变量后重新启动'
 			console.error(msg)
-			toast.info(msg)
 		}
 	}, [])
 

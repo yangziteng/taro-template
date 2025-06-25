@@ -33,26 +33,6 @@
 		"preview:weapp": "npx mpa",
 		"preview:weapp-local-watch": "pnpm preview:weapp && pnpm dev:weapp"
 	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "pretty-quick --staged && lint-staged",
-			"commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
-		}
-	},
-	"lint-staged": {
-		"*.{cjs,mjs,js,ts,tsx}": [
-			"eslint",
-			"prettier --write"
-		],
-		"*.{css,less}": [
-			"stylelint --fix",
-			"prettier --write"
-		],
-		"*.{json,jsonc,html,yml,yaml,md}": [
-			"markdownlint-cli2 .md",
-			"prettier --write"
-		]
-	},
 	"browserslist": [
 		"last 3 versions",
 		"Android >= 4.1",

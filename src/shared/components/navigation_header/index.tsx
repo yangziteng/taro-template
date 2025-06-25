@@ -1,10 +1,7 @@
 import Taro from '@tarojs/taro'
 import React from 'react'
-import { View, Image } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import { useNavigationBarInfo, usePageInfo } from '@/utils/hooks'
-import icon_back from '@/assets/icons/back.svg'
-import icon_home from '@/assets/icons/home.svg'
-import Router from '@/utils/route'
 import './index.scss'
 
 type NavigationHeaderProps = {
@@ -25,16 +22,7 @@ export default function NavigationHeader(
 		menuButtonWidth,
 	} = useNavigationBarInfo()
 
-	const { stackLength, isTabbar } = usePageInfo()
-	console.log('pageInfo', stackLength, isTabbar)
-
-	const handleBack = () => {
-		Router.navigateBack()
-	}
-
-	const handleBackToHome = () => {
-		Router.backToHome()
-	}
+	const {  isTabbar } = usePageInfo()
 
 	const iconBoxStyle =
 		process.env.TARO_ENV === 'weapp'
@@ -79,17 +67,9 @@ export default function NavigationHeader(
 										: {}
 								}
 							>
-								<Image
-									src={icon_back}
-									className='nav-header-content-left-icon'
-									onClick={handleBack}
-								/>
+								
 								<View className='nav-header-content-left-icon-divider' />
-								<Image
-									src={icon_home}
-									className='nav-header-content-left-icon'
-									onClick={handleBackToHome}
-								/>
+								
 							</View>
 						</>
 					) : null}
