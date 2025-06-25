@@ -34,9 +34,9 @@ const config = {
 	},
 	compiler: {
 		type: 'webpack5',
+		// 禁用 prebundle 来避免 remote module 的 async/await 问题
 		prebundle: {
-			// exclude 掉第三方库，规避 prebundle 模式下可能出现的报错
-			exclude: ['@nutui/nutui-react-taro']
+			enable: false
 		},
 	},
 	framework: 'react',

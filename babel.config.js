@@ -8,6 +8,13 @@ module.exports = {
     }]
   ],
 	plugins: [
+		// 转换async/await语法
+		["@babel/plugin-transform-runtime", {
+			"regenerator": true,
+			"corejs": false,
+			"helpers": true,
+			"useESModules": false
+		}],
 		[
 			"import",
 			{
